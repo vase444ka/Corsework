@@ -10,14 +10,9 @@ public class Student {
                 '}';
     }
 
-    public Student(String fullName, Yearbook yearbook) {
+    public Student(long id, String fullName, Yearbook yearbook) {
+        this.id = id;
         this.fullName = fullName;
-        this.yearbook = yearbook;
-    }
-
-    public Student(String fullName, String tgUsername, Yearbook yearbook) {
-        this.fullName = fullName;
-        this.tgUsername = tgUsername;
         this.yearbook = yearbook;
     }
 
@@ -29,14 +24,6 @@ public class Student {
         this.fullName = fullName;
     }
 
-    public String getTgUsername() {
-        return tgUsername;
-    }
-
-    public void setTgUsername(String tgUsername) {
-        this.tgUsername = tgUsername;
-    }
-
     public Yearbook getYearbook() {
         return yearbook;
     }
@@ -45,8 +32,16 @@ public class Student {
         this.yearbook = yearbook;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     //whether to put id or not
+    private long id;
     private String fullName;
-    private String tgUsername;
-    Yearbook yearbook;
+    private Yearbook yearbook;
 }

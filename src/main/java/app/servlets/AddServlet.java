@@ -32,9 +32,8 @@ public class AddServlet extends HttpServlet {
         String type = req.getParameter("type");
         int price = Integer.parseInt(req.getParameter("price"));
 
-        Yearbook yearbook = new Yearbook(grade, schoolName, type, price);
-        InputStream input = getServletContext().getResourceAsStream("WEB-INF/db.conf");
-        YearbookDAO.insert(yearbook, input);
+        Yearbook yearbook = new Yearbook(0, grade, schoolName, type, price);
+        YearbookDAO.insert(yearbook);
 
         req.setAttribute("new_yearbook", yearbook.toString());
         doGet(req, resp);

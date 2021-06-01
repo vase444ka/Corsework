@@ -1,11 +1,21 @@
 package app.entities;
 
 public class Yearbook {
-    //whether to put id or not
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    private long id;
     private int grade;
     private String schoolName;
     private String type;
     private boolean photographed;
+    private boolean edited;
+    private int price;
 
     @Override
     public String toString() {
@@ -18,10 +28,8 @@ public class Yearbook {
                 '}';
     }
 
-    private boolean edited;
-    private int price;
-
-    public Yearbook(int grade, String schoolName, String type, int price) {
+    public Yearbook(long id, int grade, String schoolName, String type, int price) {
+        this.id = id;
         this.grade = grade;
         this.schoolName = schoolName;
         this.type = type;
@@ -30,7 +38,8 @@ public class Yearbook {
         this.price = price;
     }
 
-    public Yearbook(int grade, String schoolName, String type, int price, boolean photographed, boolean edited) {
+    public Yearbook(long id, int grade, String schoolName, String type, int price, boolean photographed, boolean edited) {
+        this.id = id;
         this.grade = grade;
         this.schoolName = schoolName;
         this.type = type;

@@ -20,8 +20,7 @@ public class ListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        InputStream input = getServletContext().getResourceAsStream("/WEB-INF/db.conf");
-        List<String> flights = YearbookDAO.stringList(input);
+        List<String> flights = YearbookDAO.stringList();
         req.setAttribute("classes", flights);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
